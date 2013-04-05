@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Points</title>
+    <link rel="stylesheet" href="/public/app.css">
+</head>
+<body>
+<div id="everything">
+    <header>
+        <h1>Bloodhound Points</h1>
+    </header>
+    <div id="content">
+        <ul>
+            {{range .}}
+                <li>
+                    <h2>{{.Name}}<span class="points">{{.Points}}</span></h2>
+                </li>
+            {{end}}
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>

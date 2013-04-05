@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Points</title>
+    <link rel="stylesheet" href="/public/app.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        // TODO: Fix this workaround
+        var key = getParameterByName('key');
+        $(function(){
+            $('h2 a').each(function(){
+                var href = $(this).attr('href').replace("secret", key);
+                $(this).attr('href', href); 
+            });
+        });
+        function getParameterByName(name)
+        {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.search);
+            if(results == null)
+                return "";
+            else
+                return decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+    </script>
+</head>
+<body>
+<div id="everything">
+    <header>
+        <h1>Bloodhound Points (admin)</h1>
+    </header>
+    <div id="content">
+        <ul>
+            {{range .}}
+                <li>
+                    <h2>{{.Name}}
+                        <span class="points">{{.Points}}</span>
+                        <a href="/points?key=secret&slug={{.Slug}}&points=1">+1</a>
+                        <a href="/points?key=secret&slug={{.Slug}}&points=10">+10</a>
+                    </h2>
+                </li>
+            {{end}}
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>
