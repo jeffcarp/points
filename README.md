@@ -1,8 +1,9 @@
 # Points
-## Assign points to people in your office
+
+### Assign points to people in your office
 
 Run with:
 
 ```bash
-go run app
+go run app.go
 ```
