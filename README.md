@@ -1,5 +1,7 @@
 # Points
 
+![screenshot](https://raw.github.com/jeffcarp/points/master/screenshot.png)
+
 A simple one-page app written in Go that lets you award points to people in your office. Start by filling in people's information in **people.json**. Run with:
 
 ```bash
